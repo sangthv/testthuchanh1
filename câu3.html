@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p  id="demo">so nguyen to</p>
+Tổng số là:  <h3  id="demo1"></h3>
+<script>
+    function sumOfListPrime(x) {
+        if (x<2) return false
+        if (x<=3) return true
+        for (let i = 2; i <=x/2  ; i++) {
+            if (x%i==0){
+                return false
+            }
+        }return true
+    }
+    arr = [1,5,7,9,10,20,30,45,13,20,10]
+    let arr1=[]
+    for (let i = 0; i < arr.length; i++) {
+        if (sumOfListPrime(arr[i])){
+            arr1.push(arr[i])
+        }
+    }
+    document.getElementById("demo").innerHTML=arr1 + " là các số nguyên tố"
+    function getSum (){
+        let sum =0;
+        for (let i=0; i<arr1.length; i++){
+            sum += arr1[i];
+        }
+        return sum;
+    }
+    let sum = getSum()
+    document.getElementById("demo1").innerHTML =sum
+</script>
+</body>
+</html>
